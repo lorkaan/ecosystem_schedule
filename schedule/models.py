@@ -89,7 +89,7 @@ class Deadline(BaseScheduleItem):
     )
 
     status = models.ForeignKey(
-        EventScheduleItemStatus,
+        DeadlineScheduleItemStatus,
         on_delete=models.PROTECT,
         related_name="%(app_label)s_%(class)s_deadlines"
     )

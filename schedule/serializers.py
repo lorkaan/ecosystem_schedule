@@ -170,7 +170,7 @@ class DeadlineSerializer(
     )
 
     status = serializers.PrimaryKeyRelatedField(
-        queryset=EventScheduleItemStatus.objects.all()
+        queryset=DeadlineScheduleItemStatus.objects.all()
     )
 
     class Meta:
