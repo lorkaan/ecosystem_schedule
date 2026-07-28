@@ -2,7 +2,7 @@ from django.apps import AppConfig
 
 
 class ScheduleConfig(AppConfig):
-    name = 'schedule'
+    name = 'ecosystem_schedule.schedule'
 
     def ready(self):
         from .models import Event, Deadline
