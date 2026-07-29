@@ -1,6 +1,6 @@
 from rest_framework import serializers
 
-from ecosystem_foundations.base.serializers import (
+from foundations.ecosystem_foundations.base.serializers import (
     ActiveSerializerMixin,
     TimeAuditableSerializerMixin,
     BaseItemTypeSerializerMixin,

@@ -2,7 +2,7 @@ from django.db import models
 from django.core.exceptions import ValidationError
 import pghistory
 
-from ecosystem_foundations.base.models import BaseUuidPrimaryKeyModel, TimeAuditableMixin, ActiveMixin, BaseItemType, CreatedByMixin
+from foundations.ecosystem_foundations.base.models import BaseUuidPrimaryKeyModel, TimeAuditableMixin, ActiveMixin, BaseItemType, CreatedByMixin
 # Create your models here.
 
 class ScheduleStatus(models.TextChoices):

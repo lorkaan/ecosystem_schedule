@@ -1,4 +1,4 @@
-from ecosystem_foundations.base.registry import GenericRegistry, BaseItemTypeDefinition
+from foundations.ecosystem_foundations.base.registry import GenericRegistry, BaseItemTypeDefinition
 
 EVENT_STATUS_REGISTRY = GenericRegistry[BaseItemTypeDefinition](
     key_fn=lambda d: (d.model, d.code),

@@ -3,7 +3,7 @@ from rest_framework import viewsets
 # Create your views here.
 
 
-from ecosystem_foundations.base.views import (
+from foundations.ecosystem_foundations.base.views import (
     ActiveQuerysetMixin,
     BaseItemTypeQueryViewSetMixin,
     BaseQueryViewSetMixin,
