@@ -6,7 +6,7 @@ from foundations.ecosystem_foundations.base.serializers import (
     BaseItemTypeSerializerMixin,
     CreatedBySerializerMixin,
 )
-from schedule.models import Deadline, DeadlineScheduleItemStatus, DeadlineScheduleItemType, Event, EventScheduleItemStatus, EventScheduleItemType
+from .models import Deadline, DeadlineScheduleItemStatus, DeadlineScheduleItemType, Event, EventScheduleItemStatus, EventScheduleItemType
 
 class BaseScheduleItemSerializerMixin(
     CreatedBySerializerMixin,
