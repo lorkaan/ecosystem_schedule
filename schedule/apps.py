@@ -6,8 +6,8 @@ class ScheduleConfig(AppConfig):
 
     def ready(self):
         from .models import Event, Deadline
-        from foundations.ecosystem_foundations.base.registry import NOTABLE_MODELS
+        from foundations.ecosystem_foundations.base.registry import NOTABLE_MODELS_REGISTRY
         from foundations.ecosystem_foundations.users.registry import USER_ASSIGNABLE_MODELS_REGISTRY
 
         USER_ASSIGNABLE_MODELS_REGISTRY.add(Event, Deadline)
-        NOTABLE_MODELS.add(Event, Deadline)
+        NOTABLE_MODELS_REGISTRY.add(Event, Deadline)
