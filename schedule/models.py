@@ -30,7 +30,7 @@ class BaseScheduleItemType(BaseItemType):
     requires_assignment = models.BooleanField(default=False)
 
     class Meta:
-        abstract = False
+        abstract = True
 
 class EventScheduleItemType(BaseScheduleItemType):
     pass
