@@ -101,12 +101,20 @@ class EventSerializer(
     BaseScheduleItemSerializerMixin,
     serializers.ModelSerializer
 ):
-    type = serializers.PrimaryKeyRelatedField(
-        queryset=EventScheduleItemType.objects.all()
+    type = EventScheduleItemTypeSerializer(read_only=True)
+    status = EventScheduleItemStatusSerializer(read_only=True)
+
+    # write fields
+    type_id = serializers.PrimaryKeyRelatedField(
+        queryset=EventScheduleItemType.objects.all(),
+        source="type",
+        write_only=True
     )
 
-    status = serializers.PrimaryKeyRelatedField(
-        queryset=EventScheduleItemStatus.objects.all()
+    status_id = serializers.PrimaryKeyRelatedField(
+        queryset=EventScheduleItemStatus.objects.all(),
+        source="status",
+        write_only=True
     )
 
     class Meta:
@@ -122,9 +130,13 @@ class EventSerializer(
             "start_time",
             "end_time",
 
-            # classification
+            # classification Read
             "type",
             "status",
+
+            # classification Write
+            "type_id",
+            "status_id",
 
             # lifecycle
             "is_active",
@@ -165,12 +177,21 @@ class DeadlineSerializer(
     BaseScheduleItemSerializerMixin,
     serializers.ModelSerializer
 ):
-    type = serializers.PrimaryKeyRelatedField(
-        queryset=DeadlineScheduleItemType.objects.all()
+
+    type = DeadlineScheduleItemTypeSerializer(read_only=True)
+    status = DeadlineScheduleItemStatusSerializer(read_only=True)
+
+    # write fields
+    type_id = serializers.PrimaryKeyRelatedField(
+        queryset=DeadlineScheduleItemType.objects.all(),
+        source="type",
+        write_only=True
     )
 
-    status = serializers.PrimaryKeyRelatedField(
-        queryset=DeadlineScheduleItemStatus.objects.all()
+    status_id = serializers.PrimaryKeyRelatedField(
+        queryset=DeadlineScheduleItemStatus.objects.all(),
+        source="status",
+        write_only=True
     )
 
     class Meta:
@@ -185,9 +206,13 @@ class DeadlineSerializer(
             # scheduling
             "due_time",
 
-            # classification
+            # classification Read
             "type",
             "status",
+
+            # classification Write
+            "type_id",
+            "status_id",
 
             # lifecycle
             "is_active",
